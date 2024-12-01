@@ -1,6 +1,10 @@
-# Fine-Tuning Llama 3.1 8B with QLoRA for Legal Chatbot Development
+# Part-1: Fine-Tuning Llama 3.1 8B with QLoRA for Legal Chatbot Development
 
-This repository contains a Google Colab notebook for fine-tuning the Llama 3.1 8B model on a law-based dataset using QLoRA (Quantized Low-Rank Adaptation). The project also includes a chatbot implementation and a PDF reader for document-based legal queries.
+Project repository for fine-tuning the Llama 3.1 8B model on a law-based dataset using QLoRA (Quantized Low-Rank Adaptation). The project also includes a chatbot implementation and a PDF reader for document-based legal queries.
+
+## Repository file structure:
+- merged_dataset.json: A .json format dataset document with question-answer format of Indian law related data.
+- Llama Lawer.ipynb: Jupyter notebook with implementation details.
 
 ---
 
@@ -46,15 +50,15 @@ This repository contains a Google Colab notebook for fine-tuning the Llama 3.1 8
 
 The notebook uses the following default parameters for QLoRA-based fine-tuning:
 - **Learning Rate:** 0.0002  
-- **Batch Size:** 16  
-- **Num Training Steps:** 1000  
-- **Rank:** 8  
+- **Batch Size:** 2
+- **Num Training Steps:** 60  
+- **Rank:** 16  
 - **Alpha:** 16  
-- **Dropout:** 0.05  
+- **Dropout:** 0  
 - **Quantization Bits:** 4-bit  
-- **Optimizer:** AdamW with weight decay  
+- **Optimizer:** AdamW with weight decay
+- **Weight decay:** 0.01   
 - **Evaluation Steps:** 50  
-- **Warmup Ratio:** 0.1  
 
 ---
 
@@ -96,3 +100,17 @@ Ensure your dataset follows the Llama 3.1 fine-tuning structure:
   },
   ...
 ]
+```
+
+---
+
+## Future Improvements
+- Incorporating more domain-specific datasets for broader coverage.
+- Enhancing the chatbot with memory and contextual awareness for extended conversations.
+- Scaling to larger models for even greater accuracy.
+
+--- 
+
+## Contributors
+- Saumitra Agrawal (Email: agrawal.ma40@gmail.com)
+- Krishna Patil    (Email: krishnabpatil2003@gmail.com)
